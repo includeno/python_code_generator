@@ -11,6 +11,15 @@ class Info:
         self.oldword=oldword
         self.newword=newword
 
+class Model:
+    model_file_path=""#model文件地址
+    model_replace_point=[]#list[str] model中的替换点位
+    model_append_point=[]#list[str] model中的追加文本点位 点位位置不变，在其后方追加
+
+    def __init__(self,model_file_path,model_replace_point):
+        self.model_file_path=model_file_path
+        self.model_replace_point=model_replace_point
+
 
 def copy_to(infilepos,outfilepos):
     infile=open(infilepos,mode="r",encoding="utf-8")
